@@ -1,0 +1,19 @@
+name: Issue report
+description: Fill out this form to report an issue
+title: "Issue Report"
+labels: ["issue", "bug", "correction"]
+projects: ["capaolab/4"]
+assignees: ["viriatonova"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grama Issue 
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Issue description
+      value: "Content here"
+    validations:
+      required: true
