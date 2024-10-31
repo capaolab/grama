@@ -1,0 +1,26 @@
+# Projec files and folders
+
+.editorconfig
+.DS_Store
+.vscode
+.gitignore
+.eslintignore
+.eslint.json
+.prettierrc.json
+.prettierrc
+.gilab-ci.yml
+.lintstagedrc.json
+.cypress.config.js
+.docker-compose.yml
+.dockerfile
+.dockerignore
+.jest.config.js
+.jest.setup.ts
+README.md
+
+/cypress
+/.vscode
+/.husky
+/.git
+/.gitlab
+
