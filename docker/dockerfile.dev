@@ -1,17 +1,18 @@
-FROM node:20.13.0-alpine3.18 AS base
+FROM node:20.13.0-alpine3.18
 
-# Install dependencies only when needed
-FROM base AS builder
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-COPY ./grama .
-
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# Install dependencies using npm
+COPY ./grama .
+COPY ./prisma .
+COPY ./docker/grama_entrypoint.sh .
+
+RUN chmod +x grama_entrypoint.sh
+
 RUN \
   if [ -f package-lock.json ]; then \
     npm ci; \
@@ -19,6 +20,5 @@ RUN \
     echo "package-lock.json not found." ; exit 1; \
   fi
 
-COPY ./prisma .
 
-RUN npx prisma generate
+ENTRYPOINT ["./grama_entrypoint.sh"]
