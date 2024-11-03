@@ -2,7 +2,7 @@ services:
   grama:
     build:
       dockerfile: ./docker/dockerfile.dev
-    container_name: grama
+    container_name: grama_app
     image: 'grama:latest'  
     restart: always
     command: npm run dev
@@ -24,7 +24,7 @@ services:
   db:
     image: postgres:14
     restart: always
-    container_name: selftools_db
+    container_name: grama_db
     volumes:
       - ./db_data:/var/lib/postgresql/data/pgdata
     env_file:
