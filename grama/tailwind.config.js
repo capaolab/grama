@@ -8,8 +8,46 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        secondary: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        accent: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        neutral: {
+          1: "#ffffff",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        info: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        success: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        warning: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
+        error: {
+          1: "#000000",
+          2: "#FFFFFF",
+          3: "#FFFFFF",
+        },
       },
     },
   },
