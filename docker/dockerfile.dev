@@ -15,7 +15,7 @@ RUN chmod +x grama_entrypoint.sh
 
 RUN \
   if [ -f package-lock.json ]; then \
-    npm ci; \
+    npm ci --legacy-peer-deps; \
   else \
     echo "package-lock.json not found." ; exit 1; \
   fi
