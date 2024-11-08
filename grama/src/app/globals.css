@@ -58,4 +58,11 @@
         @apply w-full h-12 px-4 py-2 text-base lg:text-xl rounded-md bg-primary-1 text-primary-2
         hover:border-none hover:bg-accent-1 hover:text-primary-2 transition ease-in-out duration-300 uppercase
     }
+
+    /* LINKS 
+    *
+    */
+    .navBar-link {
+        @apply relative py-2 text-lg flex items-center gap-2
+    }
 }
