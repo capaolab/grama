@@ -3,32 +3,43 @@
 @tailwind utilities;
 
 @layer base {
-    html, body {
+
+    html,
+    body {
         @apply w-full h-full
     }
+
     h1 {
         @apply text-4xl font-bold tracking-wide
     }
+
     h2 {
         @apply text-4xl 2xl:text-5xl tracking-wide
     }
+
     h3 {
         @apply text-2xl tracking-wide
     }
+
     p {
         @apply text-base font-light 2xl:text-xl tracking-wide
     }
+
     a {
         @apply text-base 2xl:text-xl tracking-wide
     }
+
     span {
         @apply text-base font-light 2xl:text-xl tracking-wide
     }
+
     button {
         @apply text-base 2xl:text-xl
     }
 }
+
 @layer components {
+
     /* PANINATION 
     *   default margin and padding : pagination, 
     */
@@ -42,21 +53,20 @@
     .input-text {
         @apply w-full h-auto relative mb-6
     }
+
     .input-text input {
-        @apply w-full h-12 px-6 border border-primary-1 rounded-md 
-        focus:outline-none focus:shadow-md focus:ring-2 ring-primary-1
+        @apply w-full h-12 px-6 border border-primary-1 rounded-md focus:outline-none focus:shadow-md focus:ring-2 ring-primary-1
     }
+
     .input-text label {
-        @apply absolute -top-3 left-4 px-2
-        text-sm rounded-md bg-neutral-1 lowercase
+        @apply absolute -top-3 left-4 px-2 text-sm rounded-md bg-neutral-1 lowercase
     }
 
     /* BUTTONS 
     *
     */
     .btn-primary {
-        @apply w-full h-12 px-4 py-2 text-base lg:text-xl rounded-md bg-primary-1 text-primary-2
-        hover:border-none hover:bg-accent-1 hover:text-primary-2 transition ease-in-out duration-300 uppercase
+        @apply w-full h-12 px-4 py-2 text-base lg:text-xl rounded-md bg-primary-1 text-primary-2 hover:border-none hover:bg-accent-1 hover:text-primary-2 transition ease-in-out duration-300 uppercase
     }
 
     /* LINKS 
@@ -64,5 +74,12 @@
     */
     .navBar-link {
         @apply relative py-2 text-lg flex items-center gap-2
+    }
+}
+
+@layer utilities {
+    .primary-gradient {
+        background: rgb(0, 61, 18);
+        background: linear-gradient(0deg, rgba(0, 61, 18, 1) 0%, rgba(0, 34, 11, 1) 41%);
     }
 }

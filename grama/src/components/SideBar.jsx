@@ -8,7 +8,7 @@ import { HiCube } from "react-icons/hi";
 function SideBar() {
     return (
         <nav
-            className="min-h-[40rem] max-h-screen ml-1 my-1 w-72 pl-8 py-10 bg-green-950 text-white rounded-l-2xl"
+            className="min-h-[40rem] max-h-screen ml-1 my-1 w-72 pl-8 py-10 primary-gradient text-white rounded-l-2xl"
         >
             <Link href='#' className="flex items-center gap-2">
                 <FaStarOfLife className="text-2xl text-secondary-1" />
