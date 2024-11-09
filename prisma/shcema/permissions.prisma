@@ -1,0 +1,20 @@
+model PermissionSet {
+  id              String       @id @default(uuid())
+  name            String       @unique
+  description     String?
+  permissions     Permission[]
+  users           User[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model Permission {
+  id              String          @id @default(uuid())
+  name            String          @unique
+  description     String?
+  resource        String
+  action          String
+  permissionSets  PermissionSet[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}

@@ -1,0 +1,49 @@
+// Links Users to Clients with specific access levels
+model ClientAccess {
+  id              String          @id @default(uuid())
+  isMainAccount   Boolean         @default(false)  // Identifies the main account for the client
+  accessLevel     ClientRole[]    // Multiple roles possible for client users
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  
+  // Relations
+  user            User            @relation(fields: [userId], references: [id])
+  userId          String          @unique
+  client          Client          @relation(fields: [clientId], references: [id])
+  clientId        String
+
+  @@unique([clientId, isMainAccount]) // Ensures only one main account per client
+}
+
+enum ClientRole {
+  ADMIN           // Full access to client's area
+  FINANCIAL       // Access to invoices and financial data
+  OPERATOR        // Basic operations access
+  VIEWER          // Read-only access
+}
+
+model Client {
+  id              String          @id @default(uuid())
+  name            String
+  email           String?
+  phone           String?
+  cnpj            String?         @unique
+  status          ClientStatus    @default(ACTIVE)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  
+  // Relations
+  address         Address?
+  notes           Note[]
+  tasks           Task[]
+  sales           Sale[]
+  userAccesses    ClientAccess[]  // All users who have access to this client
+  managedBy       User            @relation("UserClients", fields: [managedById], references: [id])
+  managedById     String          // Internal user responsible for this client
+}
+
+enum ClientStatus {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}

@@ -1,0 +1,34 @@
+model Lead {
+  id            String      @id @default(uuid())
+  name          String
+  email         String?
+  phone         String?
+  company       String?
+  source        LeadSource
+  status        LeadStatus  @default(NEW)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  user          User        @relation("UserLeads", fields: [userId], references: [id])
+  userId        String
+  notes         Note[]
+  tasks         Task[]
+  address       Address?
+}
+
+enum LeadSource {
+  WEBSITE
+  REFERRAL
+  COLD_CALL
+  EVENT
+  SOCIAL_MEDIA
+  OTHER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  NEGOTIATING
+  CONVERTED
+  LOST
+}
