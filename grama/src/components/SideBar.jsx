@@ -4,11 +4,14 @@ import { RiDashboardFill } from "react-icons/ri";
 import { IoBarChartOutline } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io";
 import { HiCube } from "react-icons/hi";
+import { BiMessageDetail } from "react-icons/bi";
+import { MdSwapHoriz } from "react-icons/md"
 
 function SideBar() {
   return (
     <nav
-      className="min-h-[40rem] max-h-screen ml-1 my-1 w-72 pl-8 py-10 primary-gradient text-white rounded-l-2xl"
+      className="min-h-[40rem] max-h-screen ml-1 my-1 w-72 py-10 px-8 primary-gradient
+     text-white flex-none rounded-l-2xl"
     >
       <Link href='#' className="flex items-center gap-2">
         <FaStarOfLife className="text-2xl text-secondary-1" />
@@ -56,6 +59,27 @@ function SideBar() {
             <p className="group-hover:font-semibold text-white">Produto</p>
           </Link>
         </ul>
+        <ul>
+          <Link href="#" className="navBar-link group">
+            <div
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-secondary-1 rounded-r-md"
+            >
+            </div>
+            <BiMessageDetail className="text-2xl group-hover:text-secondary-1" />
+            <p className="group-hover:font-semibold text-white">Mensagens</p>
+          </Link>
+        </ul>
+        <ul>
+          <Link href="#" className="navBar-link group">
+            <div
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-secondary-1 rounded-r-md"
+            >
+            </div>
+            <MdSwapHoriz className="text-2xl group-hover:text-secondary-1" />
+            <p className="group-hover:font-semibold text-white">Transações</p>
+          </Link>
+        </ul>
+        <hr className="my-6 border-[#52525296]" />
       </li>
     </nav>
   )
