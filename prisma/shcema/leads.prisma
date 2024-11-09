@@ -1,5 +1,5 @@
 model Lead {
-  id            String      @id @default(uuid())
+  id            Int      @id @default(autoincrement())
   name          String
   email         String?
   phone         String?
@@ -8,11 +8,21 @@ model Lead {
   status        LeadStatus  @default(NEW)
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
-  user          User        @relation("UserLeads", fields: [userId], references: [id])
+  user          User?        @relation("UserLeads", fields: [userId], references: [id])
   userId        String
-  notes         Note[]
+
+  // Relations
   tasks         Task[]
-  address       Address?
+  leadHistory   LeadHistory[]
+}
+
+model LeadHistory {
+  id            Int      @id @default(autoincrement())
+  status        LeadStatus
+  createdAt     DateTime @default(now())
+
+  lead          Lead     @relation(fields: [leadId], references: [id])
+  leadId        Int
 }
 
 enum LeadSource {

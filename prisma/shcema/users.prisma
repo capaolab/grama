@@ -1,22 +1,23 @@
 model User {
-    id             String          @id @default(uuid())
-    email          String          @unique
-    password       String
-    active         Boolean         @default(true)
-    userType       UserType        @default(INTERNAL) // Helps distinguish between internal users and client users
-    createdAt      DateTime        @default(now())
-    updatedAt      DateTime        @updatedAt
-    profile        Profile?
-    permissionSets PermissionSet[]
+    id        String   @id @default(uuid())
+    email     String   @unique
+    password  String
+    active    Boolean  @default(true)
+    userType  UserType @default(INTERNAL) // Helps distinguish between internal users and client users
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    profile   Profile?
+    role      Role?
 
-    // Internal user relations
-    managedLeads   Lead[]   @relation("UserLeads")
-    managedClients Client[] @relation("UserClients")
-    authoredPosts  Post[]   @relation("UserPosts")
-    sales          Sale[]   @relation("UserSales")
+    // CMS relations
+    authoredPosts Post[] @relation("UserPosts")
 
-    // Client user relation
-    clientAccess ClientAccess?
+    // CRM relations
+    sales        Sale[] @relation("UserSales")
+    managedLeads Lead[] @relation("UserLeads")
+
+    client   Client? @relation(fields: [clientId], references: [id])
+    clientId Int     @unique
 }
 
 enum UserType {
@@ -25,27 +26,22 @@ enum UserType {
 }
 
 model Profile {
-    id          String    @id @default(uuid())
+    id          Int       @id @default(autoincrement())
     firstName   String
     lastName    String
     phone       String?
     avatar      String?
     dateOfBirth DateTime?
     bio         String?   @db.Text
+
+    // Relations
     address  Address?
     user     User     @relation(fields: [userId], references: [id])
     userId   String   @unique
     metadata Json? // For additional flexible fields
-}
 
-model Employee {
-    id              String    @id @default(uuid())
-    user            User      @relation(fields: [userId], references: [id])
-    userId          String    @unique
-    position        String?
-    department      String?
-    hireDate        DateTime?
-    terminationDate DateTime?
+    // TEST: Create an integration test to check if the unique constraint is working 
+    @@unique([firstName, lastName])
 }
 
 model Address {
@@ -57,20 +53,8 @@ model Address {
     city       String
     state      String
     zipCode    String
-    profile    Profile? @relation(fields: [profileId], references: [id])
-    profileId  String?  @unique
-    client     Client?  @relation(fields: [clientId], references: [id])
-    clientId   String?  @unique
-    lead       Lead?    @relation(fields: [leadId], references: [id])
-    leadId     String?  @unique
-}
 
-model Note {
-    id        String   @id @default(uuid())
-    content   String   @db.Text
-    createdAt DateTime @default(now())
-    client    Client?  @relation(fields: [clientId], references: [id])
-    clientId  String?
-    lead      Lead?    @relation(fields: [leadId], references: [id])
-    leadId    String?
+    // Relations
+    profile    Profile? @relation(fields: [profileId], references: [id])
+    profileId  Int  @unique
 }

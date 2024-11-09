@@ -1,0 +1,48 @@
+// Sales Management
+model Sale {
+  id          String      @id @default(uuid())
+  number      String      @unique
+  status      SaleStatus  @default(PENDING)
+  total       Float
+  commission  Float?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  // Relations
+  client      Client      @relation(fields: [clientId], references: [id])
+  clientId    Int
+  seller      User        @relation("UserSales", fields: [sellerId], references: [id])
+  sellerId    String
+  items       SaleItem[]
+}
+
+model SaleItem {
+  id          String    @id @default(uuid())
+  quantity    Int
+  price       Float
+  product     Product   @relation(fields: [productId], references: [id])
+  productId   String
+  sale        Sale      @relation(fields: [saleId], references: [id])
+  saleId      String
+}
+
+model Product {
+  id          String      @id @default(uuid())
+  name        String
+  description String?
+  price       Float
+  sku         String      @unique
+  active      Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  saleItems   SaleItem[]
+}
+
+enum SaleStatus {
+  PENDING
+  CONFIRMED
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
