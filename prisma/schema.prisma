@@ -5,13 +5,5 @@ datasource db {
 
 generator client {
     provider = "prisma-client-js"
-}
-
-model User {
-    id         Int      @id @default(autoincrement())
-    email      String   @unique
-    first_name String?
-    last_name  String?
-    birth_date DateTime
-    created_at DateTime @default(now())
+    previewFeatures = ["prismaSchemaFolder"]
 }
