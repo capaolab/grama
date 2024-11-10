@@ -1,10 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import loginSchema from "@/lib/schemas/loginSchema"
 export async function login(state, formData) {
-    try {
-        const validatedField = await loginSchema.validate(formData)
-    } catch (error) {
-        return re
-    }
-    return
+  try {
+    if (!formData.email || !formData.password) return
+    const validatedField = await loginSchema.validate(formData)
+    if (!validatedField) return
+    console.log("VALIDAÇÕO DE DADOS SUCESSO")
+  } catch (error) {
+    return error
+  }
+  return
 }
