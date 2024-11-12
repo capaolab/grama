@@ -1,0 +1,30 @@
+// Task Management
+model Task {
+  id          String      @id @default(uuid())
+  title       String
+  description String?     @db.Text
+  dueDate     DateTime?
+  status      TaskStatus  @default(PENDING)
+  priority    Priority    @default(MEDIUM)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  // Relations
+  client      Client?     @relation(fields: [clientId], references: [id])
+  clientId    Int?
+  lead        Lead?       @relation(fields: [leadId], references: [id])
+  leadId      Int?
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}

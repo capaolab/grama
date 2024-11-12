@@ -5,8 +5,8 @@ on:
   # pull_request:
   #   branches: [ main ]
 jobs:
-  e2e:
-    timeout-minutes: 60
+  tests:
+    timeout-minutes: 120
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -17,10 +17,12 @@ jobs:
       with:
         node-version: lts/*
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --legacy-peer-deps
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run tests
+    - name: Run unit test
+      run: npm run test:unit
+    - name: Run E2E test
       run: npm run test:e2e
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

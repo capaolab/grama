@@ -1,0 +1,39 @@
+model Role {
+  id            Int             @id @default(autoincrement())
+  name          String          @unique
+  description   String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  permissionSet PermissionSet[]
+
+  // Relations
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String? @unique
+}
+
+model PermissionSet {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  description String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  permissions Permission[]
+
+  // Relations
+  role   Role? @relation(fields: [roleId], references: [id])
+  roleId Int?  @unique
+}
+
+model Permission {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  resource    String
+  action      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  PermissionSet   PermissionSet? @relation(fields: [permissionSetId], references: [id])
+  permissionSetId Int?           @unique
+}

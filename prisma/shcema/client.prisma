@@ -1,0 +1,23 @@
+model Client {
+  id         Int          @id @default(autoincrement())
+  name       String
+  cpf_cnpj   String?      @unique
+  status     ClientStatus @default(ACTIVE)
+  addess     String
+  city       String
+  state      String
+  zipCode    String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  // Relations
+  tasks   Task[]
+  sales   Sale[]
+  user    User?
+}
+
+enum ClientStatus {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}

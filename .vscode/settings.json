@@ -1,0 +1,36 @@
+{
+    "todo-tree.general.tags": [
+        "TODO",
+        "BUG",
+        "KAIZEN",
+        "REFACT",
+        "WARNING",
+        "TEST"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "BUG": {
+            "icon": "bug",
+            "background": "#000000",
+            "foreground":  "#ff000de7",
+        },
+        "REFACT": {
+            "icon": "tools",
+            "background": "#00ffaad0",
+            "foreground": "#fff",
+        },
+        "WARNING": {
+            "background": "#ff0000",
+            "foreground": "#fff",
+        },
+        "KAIZEN": {
+            "icon": "alert",
+            "background": "#4400ff",
+            "foreground": "#ffffff",
+        },
+        "TEST": {
+            "icon": "check",
+            "background": "#ffd900",
+            "foreground": "#000000",
+        }
+    }
+}
