@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { FaStarOfLife, FaUserCircle } from "react-icons/fa";
 import { RiDashboardFill, RiShieldKeyholeLine } from "react-icons/ri";
@@ -7,8 +9,13 @@ import { HiCube } from "react-icons/hi";
 import { BiMessageDetail } from "react-icons/bi";
 import { MdSwapHoriz, MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { TbSettings2 } from "react-icons/tb";
+import { useThemeContext } from "@/contexts/ThemeContext";
 
 function SideBar() {
+  const [theme] = useThemeContext();
+
+  console.log(theme)
+
   return (
     <nav
       className="relative flex flex-col min-h-[900px] max-h-screen ml-1 my-1 w-64 py-10 px-8 primary-gradient
