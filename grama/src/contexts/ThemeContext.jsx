@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, createContext, useContext } from "react";
-import themes from '../helpers/themes';
+import themes from '../config/themes.json';
 
 const ThemeContext = createContext();
 export default function ThemeProvider({ children }) {
