@@ -1,0 +1,13 @@
+{
+  "theme": {
+    "base": {
+      "primary": "#000000",
+      "secondary": "secondary-1",
+      "text": "text-white",
+      "sideBar": {
+        "background": "bg-primary-gradient",
+        "text": "text-gray-300"
+      }
+    }
+  }
+}
