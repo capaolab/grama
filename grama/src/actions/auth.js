@@ -7,11 +7,11 @@ async function auth(state, formData) {
   // if (!validatedField) {
   //   return state.errors.name = "Preencha todos os campos"
   // }
+  const email = formData.get('email')
+  const password = formData.get('password')
   setTimeout(() => {
     console.log('loading')
   }, 3000)
-  const email = formData.get('email')
-  const password = formData.get('password')
   console.log(email, password)
   return 'LOGIN OK'
 }
