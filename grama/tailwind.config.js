@@ -28,6 +28,10 @@ module.exports = {
           2: "#FFFFFF",
           3: "#FFFFFF",
         },
+        disabled: {
+          text: "##1e293b",
+          bg: "#64748b",
+        },
         info: {
           1: "#000000",
           2: "#FFFFFF",

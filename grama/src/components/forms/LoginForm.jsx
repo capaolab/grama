@@ -1,19 +1,20 @@
 'use client'
 
 import { useActionState } from "react"
-import { redirect } from "next/dist/server/api-utils"
 import ErrorMsg from '../errors/ErrorMsg'
 import auth from '../../actions/auth'
+import SubmitButton from "../buttons/SubmitButton"
+
 
 function LoginForm() {
   const [message, action, isPending] = useActionState(auth, undefined)
+
 
   return (
     <form
       className="flex flex-col justify-center items-center"
       action={action}
     >
-      {message && <ErrorMsg error={message} />}
       <fieldset className="input-text">
         <label htmlFor="email">Email</label>
         <input
@@ -32,13 +33,8 @@ function LoginForm() {
           placeholder="Password"
         />
       </fieldset>
-      <button
-        className="btn-primary"
-        type="submit"
-        disabled={isPending}
-      >
-        Sign In
-      </button>
+      <SubmitButton isPending={isPending} name="Login" />
+      {isPending && <ErrorMsg message={message} />}
     </form>
   )
 }
