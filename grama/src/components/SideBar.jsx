@@ -9,116 +9,115 @@ import { HiCube } from "react-icons/hi";
 import { BiMessageDetail } from "react-icons/bi";
 import { MdSwapHoriz, MdOutlineKeyboardArrowDown } from "react-icons/md"
 import { TbSettings2 } from "react-icons/tb";
-import { useThemeContext } from "@/contexts/ThemeContext";
 
 function SideBar() {
-  const [theme] = useThemeContext();
 
   return (
     <nav
-      className="relative flex flex-col min-h-[900px] max-h-screen ml-1 my-1 w-64 py-10 px-8 primary-gradient
-     text-white shrink-0 rounded-l-2xl trasition-effect"
+      className="relative flex flex-col min-h-[900px] max-h-screen ml-1 my-1 w-64 py-10 px-8 bg-[var(--bg-sidebar)]
+      text-[var(--text-color)] shrink-0 shadow-[-10px_1px_5px_10px_rgba(0,0,0,0.1)] rounded-l-2xl trasition-effect"
+      style={{ background: "var(--bg-sidebar)" }}
     >
       <Link href='#' className="flex items-center gap-2">
-        <FaStarOfLife className={`text-2xl text-${theme.secondary}`} />
+        < FaStarOfLife className="text-2xl text-[var(--secondary-color)]" />
         <h3 className="font-semibold">Grama</h3>
-      </Link>
+      </Link >
       <h3 className="block font-mono text-lg mt-12">MENU</h3>
       <li className="list-none flex flex-col mt-3 gap-4">
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <RiDashboardFill className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Visão Geral</p>
+            <RiDashboardFill className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Visão Geral</p>
           </Link>
         </ul>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <IoBarChartOutline className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Estatísticas</p>
+            <IoBarChartOutline className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Estatísticas</p>
           </Link>
         </ul>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <IoIosPeople className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Clientes</p>
+            <IoIosPeople className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Clientes</p>
           </Link>
         </ul>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <HiCube className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Produto</p>
-            <MdOutlineKeyboardArrowDown className="text-2xl ml-8 group-hover:text-secondary-1" />
+            <HiCube className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Produto</p>
+            <MdOutlineKeyboardArrowDown className="text-2xl ml-8 group-hover:text-[var(--secondary-color)]" />
           </Link>
         </ul>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <BiMessageDetail className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Mensagens</p>
-            <div className={`w-8 h-6 bg-${theme.secondary} text-black rounded-full flex justify-center items-center`}>13</div>
+            <BiMessageDetail className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Mensagens</p>
+            <div className="w-8 h-6 bg-[var(--secondary-color)] text-black rounded-full flex justify-center items-center">13</div>
           </Link>
         </ul>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <MdSwapHoriz className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Transações</p>
+            <MdSwapHoriz className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Transações</p>
           </Link>
         </ul>
         <hr className="my-6 border-gray-600" />
         <h3 className="block font-mono text-lg ">EM GERAL</h3>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <TbSettings2 className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Configurações</p>
+            <TbSettings2 className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Configurações</p>
           </Link>
         </ul>
         <ul>
-          <Link href="#" className={`navBar-link ${theme.sideBar.text} group`}>
+          <Link href="#" className="navBar-link group">
             <div
-              className={`absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-${theme.secondary} rounded-r-md`}
+              className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
             >
             </div>
-            <RiShieldKeyholeLine className={`text-2xl group-hover:text-${theme.secondary}`} />
-            <p className="group-hover:font-semibold">Segurança</p>
+            <RiShieldKeyholeLine className="text-2xl group-hover:text-[var(--secondary-color)]" />
+            <p className="group-hover:text-[var(--text-hover-sidebar)] group-hover:font-semibold">Segurança</p>
           </Link>
         </ul>
       </li>
       <hr className="mt-auto mb-4 border-gray-500" />
       <div className="flex items-center gap-2">
-        <FaUserCircle className="text-white text-[2.5rem] shrink-0" />
+        <FaUserCircle className="text-[var(--text-color)] text-[2.5rem] shrink-0" />
         <div>
           <h4 className="font-semibold">Fandaww Punx</h4>
           <span className="text-sm text-gray-400">fandaww6@gmail.com</span>
         </div>
       </div>
-    </nav>
+    </nav >
   )
 }
 
