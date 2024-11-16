@@ -1,13 +1,24 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+"use server"
+
 import loginSchema from "@/lib/schemas/loginSchema"
-export async function login(state, formData) {
-  try {
-    if (!formData.email || !formData.password) return
-    const validatedField = await loginSchema.validate(formData)
-    if (!validatedField) return
-    console.log("VALIDAÇÕO DE DADOS SUCESSO")
-  } catch (error) {
-    return error
+
+
+async function auth(prevState, formData) {
+  const email = formData.get('email')
+  const password = formData.get('password')
+
+  if (!email || !password) {
+    //TODO: Aplicar Toastfy para exibir o erro
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    return "Preencha todos os campos"
   }
-  return
+  // const validatedField = await loginSchema.validate(formData)
+  // if (!validatedField) {
+  //   return state.errors.name = "Preencha todos os campos"
+  // }
+
+  console.log(email, password)
+  return 'LOGIN OK'
 }
+
+export default auth
