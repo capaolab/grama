@@ -1,0 +1,16 @@
+model Session {
+  id              Int       @id @default(autoincrement())
+  sessionToken    String    @unique @map("session_token")
+  expiresAt       DateTime  @map("expires_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  lastAccessedAt  DateTime  @default(now()) @map("last_accessed_at")
+  isValid         Boolean   @default(true) @map("is_valid")
+  
+  // Relations
+  user            User      @relation("UserSessions",fields: [userId], references: [id], onDelete: Cascade)
+  userId          String
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}

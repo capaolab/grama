@@ -1,36 +1,34 @@
 {
+    "todo-tree.regex.regex": "(//)\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
+    "todo-tree.ripgrep.ripgrepArgs": "--no-ignore",
+    "todo-tree.tree.autoRefresh": true,
     "todo-tree.general.tags": [
         "TODO",
         "BUG",
-        "KAIZEN",
-        "REFACT",
+        "REVIEW",
         "WARNING",
         "TEST"
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
             "icon": "bug",
-            "background": "#000000",
-            "foreground":  "#ff000de7",
-        },
-        "REFACT": {
-            "icon": "tools",
-            "background": "#00ffaad0",
-            "foreground": "#fff",
+            "background": "#ff000d",
+            "foreground": "#880007",
         },
         "WARNING": {
-            "background": "#ff0000",
-            "foreground": "#fff",
-        },
-        "KAIZEN": {
             "icon": "alert",
-            "background": "#4400ff",
-            "foreground": "#ffffff",
+            "background": "#00ffff",
+            "foreground": "#028585",
+        },
+        "REVIEW": {
+            "icon": "eye",
+            "background": "#a788fd",
+            "foreground": "#230181",
         },
         "TEST": {
-            "icon": "check",
+            "icon": "tools",
             "background": "#ffd900",
-            "foreground": "#000000",
+            "foreground": "#998200",
         }
     }
 }

@@ -2,12 +2,12 @@
 
 import { useActionState } from "react"
 import ErrorMsg from '../errors/ErrorMsg'
-import auth from '../../actions/auth'
+import auth from '../../lib/actions/auth'
 import SubmitButton from "../buttons/SubmitButton"
 
 
 function LoginForm() {
-  const [message, action, isPending] = useActionState(auth, undefined)
+  const [state, action, isPending] = useActionState(auth, undefined)
 
 
   return (
@@ -22,6 +22,7 @@ function LoginForm() {
           name="email"
           type="email"
           placeholder="Email"
+          required
         />
       </fieldset>
       <fieldset className="input-text">
@@ -31,10 +32,11 @@ function LoginForm() {
           name="password"
           type="password"
           placeholder="Password"
+          required
         />
       </fieldset>
       <SubmitButton isPending={isPending} name="Login" />
-      {isPending && <ErrorMsg message={message} />}
+      {isPending && <ErrorMsg message={state} />}
     </form>
   )
 }

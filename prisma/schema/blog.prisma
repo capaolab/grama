@@ -6,9 +6,11 @@ model Post {
   published   Boolean   @default(false)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+  tags        Tag[]
+
+  // Relations with User
   author      User      @relation("UserPosts", fields: [authorId], references: [id])
   authorId    String
-  tags        Tag[]
 }
 
 model Tag {

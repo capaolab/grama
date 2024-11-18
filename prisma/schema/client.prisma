@@ -3,6 +3,7 @@ model Client {
   name       String
   cpf_cnpj   String?      @unique
   status     ClientStatus @default(ACTIVE)
+  type       ClientType   @default(INDIVIDUAL)
   addess     String
   city       String
   state      String
@@ -13,11 +14,21 @@ model Client {
   // Relations
   tasks   Task[]
   sales   Sale[]
-  user    User?
 }
 
 enum ClientStatus {
   ACTIVE
   INACTIVE
   BLOCKED
+}
+
+enum ClientType {
+  INDIVIDUAL
+  COMPANY
+}
+
+enum ClientPosition {
+  OWNER
+  MANAGER
+  EMPLOYEE
 }

@@ -8,6 +8,11 @@ model User {
     updatedAt DateTime @updatedAt
     profile   Profile?
     role      Role?
+    clientId Int
+    clientePosition ClientPosition
+    
+    // Auth relations
+    sessions   Session[] @relation("UserSessions")
 
     // CMS relations
     authoredPosts Post[] @relation("UserPosts")
@@ -16,8 +21,8 @@ model User {
     sales        Sale[] @relation("UserSales")
     managedLeads Lead[] @relation("UserLeads")
 
-    client   Client? @relation(fields: [clientId], references: [id])
-    clientId Int     @unique
+    //TEST Create an integration test to check if the unique constraint is working
+    @@unique([email, clientId, clientePosition])
 }
 
 enum UserType {
@@ -40,7 +45,7 @@ model Profile {
     userId   String   @unique
     metadata Json? // For additional flexible fields
 
-    // TEST: Create an integration test to check if the unique constraint is working 
+    //TEST Create an integration test to check if the unique constraint is working 
     @@unique([firstName, lastName])
 }
 

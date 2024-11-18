@@ -8,7 +8,7 @@ WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED 1
 
 COPY ./grama .
-COPY ./prisma .
+COPY ./prisma ./prisma
 COPY ./docker/grama_entrypoint.sh .
 
 RUN chmod +x grama_entrypoint.sh
