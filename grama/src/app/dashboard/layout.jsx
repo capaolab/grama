@@ -18,7 +18,7 @@ export default function DashboardLayout({ children }) {
   }, []);
 
   return (
-    <div className="flex">
+    <main className="flex">
       {loading ? (
         <div></div>
       ) : (
@@ -27,6 +27,6 @@ export default function DashboardLayout({ children }) {
           {children}
         </>
       )}
-    </div>
+    </main>
   );
 }

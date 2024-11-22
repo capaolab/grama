@@ -3,45 +3,65 @@
     "primary": {
       "primary": "#ffffff",
       "secondary": "#9dff00",
-      "text": "#ffffff",
-      "text-hover": "#9dff00",
+      "background": "#ffffff",
+      "bg-hover": "#d9d9d9",
+      "text": "black",
+      "text-hover": "#000000",
+      "border-color": "#d9d9d9",
+      "shadow-color": "#808080",
       "sideBar": {
         "background": "linear-gradient(0deg, rgba(0, 61, 18, 1) 0%, rgba(0, 34, 11, 1) 41%)",
-        "text": "#d1d5db",
-        "text-hover": "#ffffff"
-      }
-    },
-    "light": {
-      "primary": "#ffffff",
-      "secondary": "#9dff00",
-      "text": "black",
-      "text-hover": "#9dff00",
-      "sideBar": {
-        "background": "#ffffff",
-        "text": "black",
-        "text-hover": "black"
-      }
-    },
-    "dark": {
-      "primary": "#000000",
-      "secondary": "#9dff00",
-      "text": "white",
-      "text-hover": "#9dff00",
-      "sideBar": {
-        "background": "#0d0d0d",
-        "text": "#d1d5db",
-        "text-hover": "#ffffff"
+        "text": "#ffffff",
+        "text-hover": "#ffffff",
+        "shadow-color": "#808080"
       }
     },
     "secondary": {
       "primary": "#ffffff",
       "secondary": "#9dff00",
-      "text": "#ffffff",
-      "text-hover": "#9dff00",
+      "background": "#ffffff",
+      "bg-hover": "#d9d9d9",
+      "text": "black",
+      "text-hover": "#000000",
+      "border-color": "#d9d9d9",
+      "shadow-color": "#000000",
       "sideBar": {
         "background": "linear-gradient(0deg, rgba(0,129,255,1) 0%, rgba(38,0,255,1) 100%)",
         "text": "#d1d5db",
-        "text-hover": "#ffffff"
+        "text-hover": "#ffffff",
+        "shadow-color": "#808080"
+      }
+    },
+    "light": {
+      "primary": "#ffffff",
+      "secondary": "#9dff00",
+      "background": "#ffffff",
+      "bg-hover": "#d9d9d9",
+      "text": "black",
+      "text-hover": "#000000",
+      "border-color": "#d9d9d9",
+      "shadow-color": "#888888",
+      "sideBar": {
+        "background": "#ffffff",
+        "text": "black",
+        "text-hover": "black",
+        "shadow-color": "#888888"
+      }
+    },
+    "dark": {
+      "primary": "#000000",
+      "secondary": "#9dff00",
+      "background": "#2f2f2f",
+      "bg-hover": "#bfbfbf",
+      "text": "white",
+      "text-hover": "#000000",
+      "border-color": "#d9d9d9",
+      "shadow-color": "#808080",
+      "sideBar": {
+        "background": "#0d0d0d",
+        "text": "#d1d5db",
+        "text-hover": "#ffffff",
+        "shadow-color": "#333333"
       }
     }
   }

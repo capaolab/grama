@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
-import { decrypt } from '@/app/lib/session'
+import { decrypt } from '../session'
 import { cookies } from 'next/headers'
 
 // 1. Specify protected and public routes
 const protectedRoutes = ['/dashboard']
 const publicRoutes = ['/login', '/signup', '/']
 
-export default async function authMiddleware(req) {
+async function authMiddleware(req) {
 
   const path = req.nextUrl.pathname
   const isProtectedRoute = protectedRoutes.includes(path)
@@ -31,4 +31,6 @@ export default async function authMiddleware(req) {
   return NextResponse.next()
 }
 
+
+export default authMiddleware;
 
