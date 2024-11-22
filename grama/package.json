@@ -12,8 +12,16 @@
     "test:unit": "vitest run --coverage"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.7.4",
     "@prisma/client": "^5.21.1",
+<<<<<<< Updated upstream
+=======
+    "bcryptjs": "^2.4.3",
+    "install": "^0.13.0",
+>>>>>>> Stashed changes
     "next": "15.0.2",
+    "next-auth": "^5.0.0-beta.25",
+    "npm": "^10.9.0",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "yup": "^1.0.0-alpha.3"

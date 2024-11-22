@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< Updated upstream
 import { useTransition, useState } from "react"
 import { redirect } from "next/dist/server/api-utils"
 function LoginForm() {
@@ -7,6 +8,16 @@ function LoginForm() {
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
     const [isPending, startTransition] = useTransition()
+=======
+import { useActionState } from "react"
+import ErrorMsg from '../errors/ErrorMsg'
+import authentication from '../../lib/actions/authentication'
+import SubmitButton from "../buttons/SubmitButton"
+
+
+function LoginForm() {
+  const [state, action, isPending] = useActionState(authentication, undefined)
+>>>>>>> Stashed changes
 
     const handleSubmit = (e) => {
         e.preventDefault()

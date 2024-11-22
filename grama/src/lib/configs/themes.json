@@ -1,0 +1,48 @@
+{
+  "theme": {
+    "primary": {
+      "primary": "#ffffff",
+      "secondary": "#9dff00",
+      "text": "#ffffff",
+      "text-hover": "#9dff00",
+      "sideBar": {
+        "background": "linear-gradient(0deg, rgba(0, 61, 18, 1) 0%, rgba(0, 34, 11, 1) 41%)",
+        "text": "#d1d5db",
+        "text-hover": "#ffffff"
+      }
+    },
+    "light": {
+      "primary": "#ffffff",
+      "secondary": "#9dff00",
+      "text": "black",
+      "text-hover": "#9dff00",
+      "sideBar": {
+        "background": "#ffffff",
+        "text": "black",
+        "text-hover": "black"
+      }
+    },
+    "dark": {
+      "primary": "#000000",
+      "secondary": "#9dff00",
+      "text": "white",
+      "text-hover": "#9dff00",
+      "sideBar": {
+        "background": "#0d0d0d",
+        "text": "#d1d5db",
+        "text-hover": "#ffffff"
+      }
+    },
+    "secondary": {
+      "primary": "#ffffff",
+      "secondary": "#9dff00",
+      "text": "#ffffff",
+      "text-hover": "#9dff00",
+      "sideBar": {
+        "background": "linear-gradient(0deg, rgba(0,129,255,1) 0%, rgba(38,0,255,1) 100%)",
+        "text": "#d1d5db",
+        "text-hover": "#ffffff"
+      }
+    }
+  }
+}

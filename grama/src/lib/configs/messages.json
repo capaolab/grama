@@ -1,0 +1,12 @@
+{
+  "validation": {
+    "email": {
+      "required": "E-mail obrigatório",
+      "error": "E-mail inválido"
+    },
+    "password": {
+      "required": "Senha obrigatória",
+      "error": "Senha inválida, senha deve conter no mínimo 8 caracteres"
+    }
+  }
+}

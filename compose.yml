@@ -14,10 +14,16 @@ services:
       watch:
         - action: sync
           path: ./grama
-          target: /home/app
+          target: /app
+          ignore:
+            - node_modules
+            - coverage
+            - playwright-report
+            - playwright-test-results
+            - test-results
         - action: sync+restart
           path: .env
-          target: /home/app/.env
+          target: /app/.env
     depends_on:
       db:
         condition: service_healthy

@@ -2,7 +2,8 @@
 Grama is an open source ERP solution
 ## Development
 ### Setup
-## Testing
+- Runs docker in watch mode to sync changes in development: `docker compose up --watch` 
+### Testing
 ### E2E testing
 - In order to run e2e tests localy following the steps
     1. Install all project dependencies: `npm install`

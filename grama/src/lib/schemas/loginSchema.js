@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+import menssages from '../configs/messages.json'
+>>>>>>> Stashed changes
 import * as yup from 'yup'
 
 let loginSchema = yup.object().shape({
