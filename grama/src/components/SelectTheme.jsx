@@ -1,18 +1,28 @@
 'use client'
 
 import useChangeTheme from "@/hooks/useChangeTheme";
+import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 function SelectTheme() {
   const { changeTheme } = useChangeTheme();
+  const [theme, setTheme] = useState('');
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    setTheme(theme);
+  });
 
   return (
-    <div className="relative px-2 h-14 w-40 bg-[var(--background)] rounded-md border">
-      <label htmlFor="theme" className="text-sm text-[var(--text-color)]">Selecione um tema:</label>
+    <div className="relative px-3 h-10 w-52 bg-[var(--background)] border rounded-full">
       <select
-        className="appearance-none bg-transparent outline-none absolute px-2 pt-4 inset-0"
+        className="appearance-none bg-transparent outline-none absolute px-2 inset-0"
         id="theme"
-        onChange={(e) => changeTheme(e.target.value)}
+        onChange={(e) => {
+          changeTheme(e.target.value);
+          setTheme(e.target.value);
+        }}
+        value={theme}
       >
         <option className="bg-[var(--background)]" value='light'>Claro</option>
         <option className="bg-[var(--background)]" value='dark'>Escuro</option>

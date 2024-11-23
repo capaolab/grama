@@ -90,7 +90,7 @@ function SideBar() {
           <hr className="my-6 border-gray-600" />
           <h3 className="block font-mono text-lg ">EM GERAL</h3>
           <ul>
-            <Link href="#" className="navBar-link group">
+            <Link href="/dashboard/config" className="navBar-link group">
               <div
                 className="absolute -left-8 w-[0.4rem] h-11 hidden group-hover:block bg-[var(--secondary-color)] rounded-r-md"
               >

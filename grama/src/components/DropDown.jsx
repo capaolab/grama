@@ -6,7 +6,7 @@ function DropDown() {
       <li className="inline-block">
         <h3 className="absolute inset-y-0 flex items-center text-center font-semibold">Sales Admin</h3>
         <ul
-          className="dropdown-content opacity-0 hidden py-2 bg-[var(--background)]
+          className="dropdown-content hidden py-2 bg-[var(--background)]
           absolute top-full left-0 w-full rounded-md shadow-[1px_1px_20px_0.3px_var(--shadow-color)]"
         >
           <li>Example</li>
