@@ -7,7 +7,7 @@
       "bg-hover": "#d9d9d9",
       "text": "black",
       "text-hover": "#000000",
-      "border-color": "#d9d9d9",
+      "border-color": "#a6a6a6",
       "shadow-color": "#808080",
       "sideBar": {
         "background": "linear-gradient(0deg, rgba(0, 61, 18, 1) 0%, rgba(0, 34, 11, 1) 41%)",
@@ -23,7 +23,7 @@
       "bg-hover": "#d9d9d9",
       "text": "black",
       "text-hover": "#000000",
-      "border-color": "#d9d9d9",
+      "border-color": "#a6a6a6",
       "shadow-color": "#000000",
       "sideBar": {
         "background": "linear-gradient(0deg, rgba(0,129,255,1) 0%, rgba(38,0,255,1) 100%)",
@@ -39,7 +39,7 @@
       "bg-hover": "#d9d9d9",
       "text": "black",
       "text-hover": "#000000",
-      "border-color": "#d9d9d9",
+      "border-color": "#a6a6a6",
       "shadow-color": "#888888",
       "sideBar": {
         "background": "#ffffff",
@@ -55,7 +55,7 @@
       "bg-hover": "#bfbfbf",
       "text": "white",
       "text-hover": "#000000",
-      "border-color": "#d9d9d9",
+      "border-color": "#a6a6a6",
       "shadow-color": "#808080",
       "sideBar": {
         "background": "#0d0d0d",
