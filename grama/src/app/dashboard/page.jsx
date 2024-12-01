@@ -29,16 +29,42 @@ function Dashboard() {
         </div>
       </header>
       <div className="p-4 h-full w-[75%] border-r border-[var(--border-color)]">
-        <div className="flex justify-between">
-          <div>
-            <h1>Dashboard</h1>
-            <h3 className="text-xl">An any way to manage sales with care and precision.</h3>
+        <div className="flex flex-col">
+          <div className="flex justify-between">
+            <div>
+              <h1>Dashboard</h1>
+              <h3 className="text-xl">An any way to manage sales with care and precision.</h3>
+            </div>
+
+            <div className="flex items-center gap-2 h-10 w-max px-3 mt-4 border border-[var(--border-color)] cursor-pointer rounded-full">
+              <LuCalendarDays className="text-[var(--text-color)]" size={20} />
+              <span className="font-medium text-base">January 2024 - May 2024</span>
+              <MdOutlineKeyboardArrowDown className="dropdown-arrow text-2xl transition duration-300" />
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 h-10 w-max px-3 mt-4 border border-[var(--border-color)] cursor-pointer rounded-full">
-            <LuCalendarDays className="text-[var(--text-color)]" size={20} />
-            <span className="font-medium text-base">January 2024 - May 2024</span>
-            <MdOutlineKeyboardArrowDown className="dropdown-arrow text-2xl transition duration-300" />
+          <div className="w-full h-max my-4 flex gap-5">
+            <div
+              className="w-full h-[250px] p-6 rounded-2xl"
+              style={{ background: "var(--bg-sidebar)" }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="dot-alert"></div>
+                <span className="text-[var(--text-sidebar)]">Update</span>
+              </div>
+            </div>
+
+            <div
+              className="w-full h-[250px] rounded-2xl border border-[var(--border-color)]"
+            >
+
+            </div>
+
+            <div
+              className="w-full h-[250px] rounded-2xl border border-[var(--border-color)]"
+            >
+
+            </div>
           </div>
         </div>
       </div>

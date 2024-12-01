@@ -9,7 +9,7 @@
   --bg-hover: #808080;
   --text-color: black;
   --text-hover: #d1d5db;
-  --border-color: #aaaaaa;
+  --border-color: #bfbfbf;
   --shadow-color: black;
   --bg-sidebar: linear-gradient(0deg, rgba(0, 61, 18, 1) 0%, rgba(0, 34, 11, 1) 41%);
   --text-sidebar: #d1d5db;
@@ -114,4 +114,24 @@
     @apply transition ease-in-out duration-0 hover:duration-700
   }
 
+}
+
+@layer utilities {
+  .dot-alert {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    animation: 1.5s pulse infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 #ff0000;
+    }
+
+    100% {
+      box-shadow: 0 0 0 14px #69ffa800;
+    }
+  }
 }
