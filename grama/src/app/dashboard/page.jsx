@@ -3,7 +3,7 @@ import SearchInput from "@/components/SearchInput";
 import { HiOutlineInbox } from "react-icons/hi";
 import { FaCirclePlus } from "react-icons/fa6";
 import { LuCalendarDays } from "react-icons/lu";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 function Dashboard() {
   return (
@@ -45,12 +45,24 @@ function Dashboard() {
 
           <div className="w-full h-max my-4 flex gap-5">
             <div
-              className="w-full h-[250px] p-6 rounded-2xl"
+              className="w-full h-[250px] p-6 flex flex-col rounded-2xl"
               style={{ background: "var(--bg-sidebar)" }}
             >
               <div className="flex items-center gap-2">
                 <div className="dot-alert"></div>
                 <span className="text-[var(--text-sidebar)]">Update</span>
+              </div>
+
+              <div className="my-auto">
+                <span className="text-base text-gray-400">Feb 12 th 2024</span>
+
+                <p className="text-2xl font-semibold text-[var(--text-sidebar)]">
+                  Sales revenue increased <span className="text-2xl font-semibold text-[var(--secondary-color)]">40%</span> in 1 week
+                </p>
+              </div>
+              <div className="flex items-center">
+                <p className="text-base text-[var(--text-sidebar)]">See statistics</p>
+                <MdOutlineKeyboardArrowRight className="text-2xl text-[var(--text-sidebar)]" />
               </div>
             </div>
 
